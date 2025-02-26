@@ -19,7 +19,9 @@ def fetch_youtube_comments(video_id):
                 "username": comment["authorDisplayName"],
                 "comment_text": comment["textOriginal"]
             })
+            print(comments)
     return comments
+
 
 def analyze_sentiment(comment_text):
     """Analyzes sentiment of a comment using Gemini API."""
@@ -39,6 +41,7 @@ def analyze_sentiment(comment_text):
         response_data = response.json()
         # Extract sentiment from API response
         sentiment = response_data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "Neutral")
+        print (sentiment)
         return sentiment
 
     return "Neutral"  # Default if API fails
