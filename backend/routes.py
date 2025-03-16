@@ -46,3 +46,21 @@ def get_insights():
         "disagreement_percentage": (disagreement / total) * 100 if total else 0,
     }
     return jsonify(insights), 200
+
+
+# @main_routes.route('/', methods=['GET', 'POST'])
+# def index():
+#     if request.method == 'POST':
+#         text = request.form.get('text')
+#         if not text:
+#             flash('Please enter some text!', 'error')
+#         else:
+#             results = analyze_sentiment(text)
+#             return render_template('results.html', results=results)
+#     return render_template('index.html')
+
+# @main_routes.route('/analyze', methods=['POST'])
+# def analyze():
+#     text = request.form.get('text')
+#     results = analyze_sentiment(text)
+#     return render_template('results.html', results=results)
