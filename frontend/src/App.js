@@ -29,7 +29,7 @@ function App() {
         <div className="min-h-screen bg-gradient-to-r from-blue-50 to-purple-50 flex flex-col items-center justify-center p-4">
             <div className="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full">
                 <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
-                    YouTube Comment Sentiment Analysis
+                    Business Sentiment Analysis
                 </h1>
 
                 <div className="flex flex-col space-y-4">

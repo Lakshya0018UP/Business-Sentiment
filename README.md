@@ -1,13 +1,13 @@
-# YouTube Comment Sentiment Analysis
+# Business Sentiment Analysis
 
-![YouTube Sentiment Analysis](https://img.shields.io/badge/Flask-Backend-blue) ![SQLite](https://img.shields.io/badge/SQLite-Database-green) ![React](https://img.shields.io/badge/React-Frontend-orange)
+![Flask](https://img.shields.io/badge/Flask-Backend-blue) ![SQLite](https://img.shields.io/badge/SQLite-Database-green) ![React](https://img.shields.io/badge/React-Frontend-orange) ![Machine Learning](https://img.shields.io/badge/ML-Model-purple)
 
 ## 📌 Overview
-This project analyzes YouTube video comments to determine their sentiment (Positive, Neutral, or Negative) using the **Gemini API**. The application is built with **Flask (backend)**, **React (frontend)**, and **SQLite (database)**.
+This project analyzes business-related comments and reviews to determine their sentiment (**Positive, Neutral, or Negative**) using a **custom Machine Learning model**. The application is built with **Flask (backend)**, **React (frontend)**, and **SQLite (database)**.
 
 ## ✨ Features
-- Fetches comments from YouTube videos.
-- Analyzes sentiment using Google Gemini API.
+- Extracts business-related comments and reviews.
+- Analyzes sentiment using a trained **ML model (Logistic Regression/Transformer-based model)**.
 - Displays sentiment analysis results in an interactive UI.
 - Fully responsive design with a user-friendly interface.
 
@@ -15,14 +15,15 @@ This project analyzes YouTube video comments to determine their sentiment (Posit
 - **Frontend:** React, HTML, CSS, JavaScript
 - **Backend:** Flask, Flask-CORS, Flask-SQLAlchemy
 - **Database:** SQLite
-- **External APIs:** YouTube Data API v3, Gemini API
+- **Machine Learning:** Scikit-learn, Transformers, TensorFlow/PyTorch
+- **External APIs:** Web scraping for business reviews (optional)
 
 ## 🚀 Setup Instructions
 
 ### 1️⃣ Clone the Repository
 ```sh
-$ git clone https://github.com/your-username/youtube-sentiment-analysis.git
-$ cd youtube-sentiment-analysis
+$ git clone https://github.com/your-username/business-sentiment-analysis.git
+$ cd business-sentiment-analysis
 ```
 
 ### 2️⃣ Setup Backend
@@ -37,8 +38,7 @@ $ pip install -r requirements.txt
 Create a `.env` file inside the `backend` folder:
 ```sh
 SQLALCHEMY_DATABASE_URI=sqlite:///database.db
-YOUTUBE_API_KEY=your_youtube_api_key
-GEMINI_API_KEY=your_gemini_api_key
+MODEL_PATH=ml_model/model.pkl
 ```
 
 Run the backend server:
@@ -55,17 +55,17 @@ $ npm start
 
 ## 🎯 API Endpoints
 
-### Fetch Comments
+### Fetch Business Comments
 ```http
-GET /api/fetch-comments?video_id=<video_id>
+GET /api/fetch-comments?source=<source>
 ```
-- **Response:** JSON containing comments
+- **Response:** JSON containing business comments or reviews
 
 ### Analyze Sentiment
 ```http
 POST /api/analyze-sentiment
 ```
-- **Request Body:** `{ "text": "This is a comment." }`
+- **Request Body:** `{ "text": "This is a business review." }`
 - **Response:** `{ "sentiment": "Positive" }`
 
 ## 📸 Screenshots
