@@ -3,7 +3,7 @@
 ![Flask](https://img.shields.io/badge/Flask-Backend-blue) ![SQLite](https://img.shields.io/badge/SQLite-Database-green) ![React](https://img.shields.io/badge/React-Frontend-orange) ![Machine Learning](https://img.shields.io/badge/ML-Model-purple)
 
 ## 📌 Overview
-This project analyzes business-related comments and reviews to determine their sentiment (**Positive, Neutral, or Negative**) using a **custom Machine Learning model**. The application is built with **Flask (backend)**, **React (frontend)**, and **SQLite (database)**.
+This project analyzes business-related comments and reviews to determine their sentiment (**Positive, Neutral, or Negative**) using a **custom Machine Learning model**. The application is built with **Flask (backend)**, **React.js (frontend)**, and **SQLite (database)**.
 
 ## ✨ Features
 - Extracts business-related comments and reviews.
@@ -12,7 +12,7 @@ This project analyzes business-related comments and reviews to determine their s
 - Fully responsive design with a user-friendly interface.
 
 ## 🏗️ Tech Stack
-- **Frontend:** React, HTML, CSS, JavaScript
+- **Frontend:** React.js
 - **Backend:** Flask, Flask-CORS, Flask-SQLAlchemy
 - **Database:** SQLite
 - **Machine Learning:** Scikit-learn, Transformers, TensorFlow/PyTorch
