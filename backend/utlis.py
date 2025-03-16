@@ -28,14 +28,19 @@ def analyze_sentiment(comment_text):
     url = f"https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key={GEMINI_API_KEY}"
     headers = {"Content-Type": "application/json"}
     
-    # Gemini API requires structured input
     data = {
-        "contents": [
-            {"parts": [{"text": f"Analyze the sentiment of this text: '{comment_text}'"}]}
-        ]
-    }
+    "contents": [
+        {
+            "role": "user",  # Explicitly specify the role
+            "parts": [{"text": f"Analyze the sentiment of this text: \"{comment_text}\""}]
+        }
+    ]
+}
+
 
     response = requests.post(url, json=data, headers=headers)
+    print (response.text)
+   
 
     if response.status_code == 200:
         response_data = response.json()

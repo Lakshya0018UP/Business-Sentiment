@@ -37,12 +37,14 @@ def get_insights():
 
     comments = Comment.query.filter_by(video_id=video_id).all()
     total = len(comments)
+    print(total)
     agreement = sum(1 for c in comments if c.sentiment == "Agree")
     disagreement = sum(1 for c in comments if c.sentiment == "Disagree")
     
     insights = {
         "total_comments": total,
-        "agreement_percentage": (agreement / total) * 100 if total else 0,
-        "disagreement_percentage": (disagreement / total) * 100 if total else 0,
+        "agreement_percentage": (agreement / total) * 100 if total!=0 else 0,
+        "disagreement_percentage": (disagreement / total) * 100 if total!=0 else 0,
     }
+    print(insights)
     return jsonify(insights), 200
